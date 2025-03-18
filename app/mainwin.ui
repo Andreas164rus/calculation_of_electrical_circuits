@@ -42,6 +42,11 @@
          <string>А_класс ОЭ 1</string>
         </property>
        </item>
+       <item>
+        <property name="text">
+         <string>А_класс ОЭ 2</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>

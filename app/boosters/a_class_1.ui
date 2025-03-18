@@ -19,7 +19,7 @@
      <x>20</x>
      <y>310</y>
      <width>491</width>
-     <height>121</height>
+     <height>81</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -37,30 +37,10 @@
        </font>
       </property>
       <property name="text">
-       <string>Сопротивление коллекторного резистора</string>
+       <string>Сопротивление коллекторного резистора, Ом</string>
       </property>
       <property name="margin">
        <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPlainTextEdit" name="Rc">
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>30</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPlainTextEdit" name="Rb">
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>30</height>
-       </size>
       </property>
      </widget>
     </item>
@@ -78,10 +58,36 @@
        </font>
       </property>
       <property name="text">
-       <string>Сопротивление базового резистора</string>
+       <string>Сопротивление базового резистора, Ом</string>
       </property>
       <property name="margin">
        <number>0</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="Rc">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="Rb">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
       </property>
      </widget>
     </item>
@@ -91,7 +97,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>90</y>
+     <y>92</y>
      <width>478</width>
      <height>173</height>
     </rect>
@@ -111,20 +117,10 @@
        </font>
       </property>
       <property name="text">
-       <string>Напряжения истоника питания</string>
+       <string>Напряжения истоника питания, В</string>
       </property>
       <property name="margin">
        <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QPlainTextEdit" name="Ein">
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>30</height>
-       </size>
       </property>
      </widget>
     </item>
@@ -142,20 +138,10 @@
        </font>
       </property>
       <property name="text">
-       <string>Ток коллектора</string>
+       <string>Ток коллектора, А</string>
       </property>
       <property name="margin">
        <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QPlainTextEdit" name="Ic">
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>30</height>
-       </size>
       </property>
      </widget>
     </item>
@@ -173,20 +159,10 @@
        </font>
       </property>
       <property name="text">
-       <string>Переход База-Эмиттер</string>
+       <string>Переход База-Эмиттер, В</string>
       </property>
       <property name="margin">
        <number>0</number>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QPlainTextEdit" name="Ube">
-      <property name="maximumSize">
-       <size>
-        <width>100</width>
-        <height>30</height>
-       </size>
       </property>
      </widget>
     </item>
@@ -223,11 +199,47 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
-     <widget class="QPlainTextEdit" name="h21">
-      <property name="maximumSize">
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="Ein">
+      <property name="minimumSize">
        <size>
-        <width>100</width>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="Ic">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="Ube">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="hfe">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
         <height>30</height>
        </size>
       </property>

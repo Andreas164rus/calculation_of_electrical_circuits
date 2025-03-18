@@ -16,3 +16,4 @@ def prefix_converter(value):
     for prefix in PREFIXES_LESS_1:
         if value/prefix >= 1:
             return f"{value/prefix:.3f}{PREFIXES_LESS_1[prefix]}"
+    return f"{value}"
