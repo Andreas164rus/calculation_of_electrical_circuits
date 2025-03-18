@@ -22,7 +22,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>451</width>
+      <width>261</width>
       <height>22</height>
      </rect>
     </property>
@@ -39,26 +39,7 @@
        </item>
        <item>
         <property name="text">
-         <string>А-класс</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="RLC">
-       <item>
-        <property name="text">
-         <string>RLC контура</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>RL</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>RC</string>
+         <string>А_класс ОЭ 1</string>
         </property>
        </item>
       </widget>
@@ -67,7 +48,7 @@
       <widget class="QComboBox" name="converters">
        <item>
         <property name="text">
-         <string>Понижающий</string>
+         <string>Преобразователи</string>
         </property>
        </item>
        <item>
@@ -77,29 +58,7 @@
        </item>
       </widget>
      </item>
-     <item>
-      <widget class="QComboBox" name="comboBox_4">
-       <item>
-        <property name="text">
-         <string>Что-то ещё 2</string>
-        </property>
-       </item>
-      </widget>
-     </item>
     </layout>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>10</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
