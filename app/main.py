@@ -3,11 +3,14 @@ from mainwin import Ui_MainWindow
 import sys
 
 from boosters import a_class_1_form, a_class_2_form
-
+from rlc import rlc_seq_form, rlc_par_form
 value_bossters = {
     "А_класс ОЭ 1": a_class_1_form,
-    "А_класс ОЭ 2": a_class_2_form
+    "А_класс ОЭ 2": a_class_2_form,
+    "Последовательный RLC": rlc_seq_form,
+    "Параллельный RLC": rlc_par_form,
 }
+
 
 value_name = value_bossters
 
@@ -17,24 +20,36 @@ class mywindow(QtWidgets.QMainWindow):
         super(mywindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.bossters.currentTextChanged.connect(self.open_scheme)
-        self.ui.converters.currentTextChanged.connect(self.open_scheme)
+        self.select_head = [self.ui.bossters, self.ui.rlc,]
+        for select in self.select_head:
+            select.currentTextChanged.connect(self.open_scheme)
         self.now_widget = None
         self.left_margin = 0
         self.width_obj = 0
         self.showMaximized()
+        self.head_now = None
         self.height_window = self.size().height()
+
         for v in value_name.values():
             setattr(self, v.__name__, None)
 
     def open_scheme(self, value):
         class_ui = value_name.get(value)
+        if self.head_now:
+            for select in self.select_head:
+                if self.sender() != select:
+                    select.blockSignals(True)
+                    select.setCurrentIndex(0)
+                    select.blockSignals(False)
         if class_ui:
+            self.head_now = True
             class_name = class_ui.__name__
         else:
-            getattr(self, self.now_widget.__name__).deleteLater()
-            setattr(self, self.now_widget.__name__, None)
-            self.ui.bossters.setCurrentIndex(0)
+            if getattr(self, self.now_widget.__name__):
+                getattr(self, self.now_widget.__name__).deleteLater()
+                setattr(self, self.now_widget.__name__, None)
+            for select in self.select_head:
+                select.setCurrentIndex(0)
             return
 
         if getattr(self, class_name):

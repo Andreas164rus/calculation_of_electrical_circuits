@@ -22,7 +22,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>261</width>
+      <width>371</width>
       <height>22</height>
      </rect>
     </property>
@@ -59,6 +59,25 @@
        <item>
         <property name="text">
          <string>Повышающий</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="rlc">
+       <item>
+        <property name="text">
+         <string>RLC</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Последовательный RLC</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Параллельный RLC</string>
         </property>
        </item>
       </widget>
