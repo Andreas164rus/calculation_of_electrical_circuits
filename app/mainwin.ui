@@ -22,7 +22,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>371</width>
+      <width>529</width>
       <height>22</height>
      </rect>
     </property>
@@ -78,6 +78,35 @@
        <item>
         <property name="text">
          <string>Параллельный RLC</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ФНЧ</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ФВЧ</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="opetaionals">
+       <item>
+        <property name="text">
+         <string>Операционые усилители</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Инверт включение</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Неинверт включение</string>
         </property>
        </item>
       </widget>
