@@ -3,10 +3,10 @@ from mainwin import Ui_MainWindow
 import sys
 
 from boosters import a_class_1_form, a_class_2_form
-from rlc import rlc_seq_form, rlc_par_form, LPF_form
+from rlc import rlc_seq_form, rlc_par_form, LPF_form, HPF_form
 from operationals import invert_form, neinvert_form
 
-value_bossters = {
+value_name = {
     "А_класс ОЭ 1": a_class_1_form,
     "А_класс ОЭ 2": a_class_2_form,
     "Последовательный RLC": rlc_seq_form,
@@ -14,10 +14,8 @@ value_bossters = {
     "Инверт включение": invert_form,
     "Неинверт включение": neinvert_form,
     "ФНЧ": LPF_form,
+    "ФВЧ": HPF_form,
 }
-
-
-value_name = value_bossters
 
 
 class mywindow(QtWidgets.QMainWindow):
