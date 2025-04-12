@@ -3,7 +3,8 @@ from mainwin import Ui_MainWindow
 import sys
 
 from boosters import a_class_1_form, a_class_2_form
-from rlc import rlc_seq_form, rlc_par_form, LPF_form, HPF_form
+from rlc import rlc_seq_form, rlc_par_form
+from filters import LPF_form, HPF_form, PBPF_form, ALPS_form, AHPS_form
 from operationals import invert_form, neinvert_form
 
 value_name = {
@@ -15,6 +16,9 @@ value_name = {
     "Неинверт включение": neinvert_form,
     "ФНЧ": LPF_form,
     "ФВЧ": HPF_form,
+    "Полосовой фильтр": PBPF_form,
+    "Активный ФНЧ": ALPS_form,
+    "Активный ФВЧ": AHPS_form,
 }
 
 
@@ -23,7 +27,12 @@ class mywindow(QtWidgets.QMainWindow):
         super(mywindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.select_head = [self.ui.bossters, self.ui.rlc, self.ui.opetaionals]
+        self.select_head = [
+            self.ui.bossters,
+            self.ui.rlc,
+            self.ui.opetaionals,
+            self.ui.filters,
+        ]
         for select in self.select_head:
             select.currentTextChanged.connect(self.open_scheme)
         self.now_widget = None

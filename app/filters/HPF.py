@@ -142,7 +142,7 @@ class Ui_Form(object):
         self.label_6 = QtWidgets.QLabel(Form)
         self.label_6.setGeometry(QtCore.QRect(540, 80, 511, 451))
         self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap("../img/RLC/LPF.png"))
+        self.label_6.setPixmap(QtGui.QPixmap("../img/filters/HPF.png"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(Form)
@@ -182,7 +182,7 @@ class Ui_Form(object):
         Freq_in = float(self.Freq_in.text().replace(',', '.'))
 
         Xc = (2 * pi * Freq_in * CC) ** -1
-        Eout = Ein * Xc / (RR*RR + CC*CC)**0.5
+        Eout = Ein * RR / (RR*RR + Xc)**0.5
         fc = (2 * pi * RR * CC) ** -1
         Phase = - atan(2 * pi * Freq_in * RR * CC)
         self.Eout.setText(prefix_converter(Eout).replace(',','.'))
