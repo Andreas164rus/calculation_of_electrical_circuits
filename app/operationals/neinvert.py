@@ -123,10 +123,10 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_4.setText(_translate("Form", "Коэффициент усилиения"))
-        self.label_5.setText(_translate("Form", "Коэффициент усилиения, дб"))
-        self.label.setText(_translate("Form", "Сопроивление резистора R1, Ом"))
-        self.label_2.setText(_translate("Form", "Сопроивление резистора R2, Ом"))
+        self.label_4.setText(_translate("Form", "Коэффициент усилиения K"))
+        self.label_5.setText(_translate("Form", "Коэффициент усилиения K, дб"))
+        self.label.setText(_translate("Form", "Сопротивление резистора R1, Ом"))
+        self.label_2.setText(_translate("Form", "Сопротивление резистора R2, Ом"))
         self.pushButton.setText(_translate("Form", "Расчитать"))
 
     def calculate(self):

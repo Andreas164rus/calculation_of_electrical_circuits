@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 from utils import prefix_converter
 
-from math import pi, atan
+from math import pi, atan, degrees
 
 
 class Ui_Form(object):
@@ -166,25 +166,23 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_4.setText(_translate("Form", "Выходное напряжение, В"))
-        self.label_5.setText(_translate("Form", "Частота среза, Гц"))
-        self.label_10.setText(_translate("Form", "Сдвиг фазы, граудсы"))
+        self.label_4.setText(_translate("Form", "Выходное напряжение Uвых, В"))
+        self.label_5.setText(_translate("Form", "Частота среза fс, Гц"))
+        self.label_10.setText(_translate("Form", "Сдвиг фазы φ, градусы"))
         self.label.setText(_translate("Form", "Сопроивление резистора R, Ом"))
         self.label_3.setText(_translate("Form", "Емкость C, мкФ"))
         self.pushButton.setText(_translate("Form", "Расчитать"))
-        self.label_8.setText(_translate("Form", "Входное напряжение, В"))
-        self.label_9.setText(_translate("Form", "Входная частота, Гц"))
+        self.label_8.setText(_translate("Form", "Входное напряжение Uвх, В"))
+        self.label_9.setText(_translate("Form", "Входная частота f, Гц"))
 
     def calculate(self):
         RR = float(self.RR.text().replace(',', '.'))
         CC = float(self.CC.text().replace(',', '.')) * 1e-6
         Ein = float(self.Ein.text().replace(',', '.'))
         Freq_in = float(self.Freq_in.text().replace(',', '.'))
-
-        Xc = (2 * pi * Freq_in * CC) ** -1
-        Eout = Ein * Xc / (RR*RR + CC*CC)**0.5
         fc = (2 * pi * RR * CC) ** -1
-        Phase = - atan(2 * pi * Freq_in * RR * CC)
-        self.Eout.setText(prefix_converter(Eout).replace(',','.'))
-        self.Freq.setText(prefix_converter(fc).replace(',','.'))
-        self.Phase.setText(prefix_converter(Phase).replace(',','.'))
+        Eout = Ein / (1 + (Freq_in/fc)**2)**0.5
+        Phase = degrees(-atan(2 * pi * Freq_in * RR * CC))
+        self.Eout.setText(prefix_converter(Eout))
+        self.Freq.setText(prefix_converter(fc))
+        self.Phase.setText(prefix_converter(Phase))

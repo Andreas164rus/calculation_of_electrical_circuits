@@ -183,10 +183,10 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_4.setText(_translate("Form", "Усиление"))
-        self.label_5.setText(_translate("Form", "Усиление, дб"))
-        self.label_10.setText(_translate("Form", "Частота среза, Гц"))
-        self.label.setText(_translate("Form", "Входная частота, Гц"))
+        self.label_4.setText(_translate("Form", "Коэффициент усиления напряжения A"))
+        self.label_5.setText(_translate("Form", "Коэффициент усиления напряжения A, дБ"))
+        self.label_10.setText(_translate("Form", "Частота среза fc, Гц"))
+        self.label.setText(_translate("Form", "Входная частота f, Гц"))
         self.label_3.setText(_translate("Form", "Емкость C1, мкФ"))
         self.pushButton.setText(_translate("Form", "Расчитать"))
         self.label_8.setText(_translate("Form", "Сопротивлеление резистора R1, Ом"))

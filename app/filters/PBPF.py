@@ -168,12 +168,12 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label_4.setText(_translate("Form", "Сопротивлеление резистора R1, Ом"))
         self.label_5.setText(_translate("Form", "Сопротивлеление резистора R2, Ом"))
-        self.label_10.setText(_translate("Form", "Центральная резонансная частота, Гц"))
+        self.label_10.setText(_translate("Form", "Центральная резонансная частота fц, Гц"))
         self.label.setText(_translate("Form", "Емкость C1, мкФ"))
         self.label_3.setText(_translate("Form", "Емкость C2, мкФ"))
         self.pushButton.setText(_translate("Form", "Расчитать"))
-        self.label_8.setText(_translate("Form", "Минимальная частота, Гц"))
-        self.label_9.setText(_translate("Form", "Максимальная частота, Гц"))
+        self.label_8.setText(_translate("Form", "Минимальная частота fмин, Гц"))
+        self.label_9.setText(_translate("Form", "Максимальная частота fмакс, Гц"))
 
     def calculate(self):
         C1 = float(self.C1.text().replace(',', '.')) * 1e-6
@@ -183,7 +183,9 @@ class Ui_Form(object):
 
         R1 = (2 * pi * F_min * C1) ** -1
         R2 = (2 * pi * F_max * C2) ** -1
-        F_center = (F_min * F_max) ** 0.5
+        fc1 = 1/(2 * pi * R1 * C1)
+        fc2 = 1/(2 * pi * R2 * C2)
+        F_center = (fc1 * fc2) ** 0.5
         self.R1.setText(prefix_converter(R1).replace(',','.'))
         self.R2.setText(prefix_converter(R2).replace(',','.'))
         self.F_center.setText(prefix_converter(F_center).replace(',','.'))

@@ -167,10 +167,10 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_5.setText(_translate("Form", "Резонансная частота, рад/с"))
-        self.label_4.setText(_translate("Form", "Резонсная частота, Гц"))
-        self.label_10.setText(_translate("Form", "Добротность"))
-        self.label_11.setText(_translate("Form", "Импеданс, Ом"))
+        self.label_5.setText(_translate("Form", "Резонансная частота w, рад/с"))
+        self.label_4.setText(_translate("Form", "Резонсная частота fo, Гц"))
+        self.label_10.setText(_translate("Form", "Добротность Q"))
+        # self.label_11.setText(_translate("Form", "Импеданс Z, Ом"))
         self.label.setText(_translate("Form", "Сопроивление резистора R, Ом"))
         self.label_2.setText(_translate("Form", "Индуктивность L, мГн"))
         self.label_3.setText(_translate("Form", "Емкость C, мкФ"))
@@ -186,7 +186,7 @@ class Ui_Form(object):
         XL = 2j*math.pi*Freq_hz*LL
         XC = 1j/(2*math.pi*Freq_hz*CC)
         ZZ = RR + XL - XC
-        self.Freq_hz.setText(prefix_converter(Freq_hz).replace(',','.'))
+        self.Freq_hz.setText(prefix_converter(Freq_hz).replace('.',','))
         self.Freq_rad.setText(prefix_converter(Freq_rad).replace(',','.'))
         self.QQ.setText(prefix_converter(QQ).replace(',','.'))
         self.ZZ.setText(f"{ZZ}")
