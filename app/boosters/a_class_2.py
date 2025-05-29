@@ -182,13 +182,13 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_5.setText(_translate("Form", "Сопротивление базового резистора"))
-        self.label_4.setText(_translate("Form", "Сопротивление коллекторного резистора"))
-        self.label_10.setText(_translate("Form", "Сопротивление эмиттерного резистора"))
-        self.label.setText(_translate("Form", "Напряжения истоника питания, В"))
-        self.label_2.setText(_translate("Form", "Ток коллектора, А"))
-        self.label_3.setText(_translate("Form", "Переход База-Эмиттер, В"))
-        self.label_8.setText(_translate("Form", "Коэффициент усиления (h21э)"))
+        self.label_5.setText(_translate("Form", "Сопротивление базового резистора Rб, Ом"))
+        self.label_4.setText(_translate("Form", "Сопротивление коллекторного резистора Rк, Ом"))
+        self.label_10.setText(_translate("Form", "Сопротивление эмиттерного резистора Re, Ом"))
+        self.label.setText(_translate("Form", "Напряжения истоника питания E, В"))
+        self.label_2.setText(_translate("Form", "Ток коллектора Iк, А"))
+        self.label_3.setText(_translate("Form", "Переход База-Эмиттер Uбэ, В"))
+        self.label_8.setText(_translate("Form", "Коэффициент усиления по току(h21э)"))
         self.label_9.setText(_translate("Form", "Часть напряжение на резисторе Rэ \n"
 "от источника питания обычно, \n"
 "выбирают от (0,1 до 0,3)  "))

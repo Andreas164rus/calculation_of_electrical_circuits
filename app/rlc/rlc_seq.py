@@ -4,7 +4,6 @@ from utils import prefix_converter
 
 import math
 
-
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -80,7 +79,7 @@ class Ui_Form(object):
         self.ZZ.setObjectName("ZZ")
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.ZZ)
         self.formLayoutWidget_2 = QtWidgets.QWidget(Form)
-        self.formLayoutWidget_2.setGeometry(QtCore.QRect(10, 90, 511, 151))
+        self.formLayoutWidget_2.setGeometry(QtCore.QRect(10, 90, 511, 198))
         self.formLayoutWidget_2.setObjectName("formLayoutWidget_2")
         self.formLayout_2 = QtWidgets.QFormLayout(self.formLayoutWidget_2)
         self.formLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -138,7 +137,23 @@ class Ui_Form(object):
         font.setPointSize(12)
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
-        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.SpanningRole, self.pushButton)
+        self.formLayout_2.setWidget(5, QtWidgets.QFormLayout.SpanningRole, self.pushButton)
+        self.label_8 = QtWidgets.QLabel(self.formLayoutWidget_2)
+        self.label_8.setMaximumSize(QtCore.QSize(16777215, 30))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_8.setFont(font)
+        self.label_8.setObjectName("label_8")
+        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_8)
+        self.CC_2 = QtWidgets.QLineEdit(self.formLayoutWidget_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.CC_2.sizePolicy().hasHeightForWidth())
+        self.CC_2.setSizePolicy(sizePolicy)
+        self.CC_2.setMinimumSize(QtCore.QSize(0, 30))
+        self.CC_2.setObjectName("CC_2")
+        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.CC_2)
         self.label_6 = QtWidgets.QLabel(Form)
         self.label_6.setGeometry(QtCore.QRect(540, 80, 511, 451))
         self.label_6.setText("")
@@ -167,24 +182,27 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_5.setText(_translate("Form", "Резонансная частота w, рад/с"))
+        self.label_5.setText(_translate("Form", "Резонансная частота ωo, рад/с"))
         self.label_4.setText(_translate("Form", "Резонсная частота fo, Гц"))
         self.label_10.setText(_translate("Form", "Добротность Q"))
-        # self.label_11.setText(_translate("Form", "Импеданс Z, Ом"))
-        self.label.setText(_translate("Form", "Сопроивление резистора R, Ом"))
+        self.label_11.setText(_translate("Form", "Импеданс Z, Ом"))
+        self.label.setText(_translate("Form", "Сопротивление резистора R, Ом"))
         self.label_2.setText(_translate("Form", "Индуктивность L, мГн"))
         self.label_3.setText(_translate("Form", "Емкость C, мкФ"))
         self.pushButton.setText(_translate("Form", "Расчитать"))
+        self.label_8.setText(_translate("Form", "Входная частота f,  Гц"))
 
     def calculate(self):
         RR = float(self.RR.text().replace(',', '.'))
+        Fin = float(self.CC_2.text().replace(',', '.'))
         LL = float(self.LL.text().replace(',', '.')) / 1e3
         CC = float(self.CC.text().replace(',', '.')) / 1e6
         Freq_rad = 1/(LL*CC)**0.5
         Freq_hz = Freq_rad / (2 * math.pi)
-        QQ = 2 * math.pi * Freq_hz * LL / RR
-        XL = 2j*math.pi*Freq_hz*LL
-        XC = 1j/(2*math.pi*Freq_hz*CC)
+        # QQ = 2 * math.pi * Freq_hz * LL / RR
+        QQ = 1/RR * (LL/CC) ** 0.5
+        XL = 2j*math.pi*Fin*LL
+        XC = 1j/(2*math.pi*Fin*CC)
         ZZ = RR + XL - XC
         self.Freq_hz.setText(prefix_converter(Freq_hz).replace('.',','))
         self.Freq_rad.setText(prefix_converter(Freq_rad).replace(',','.'))
